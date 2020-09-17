@@ -23,10 +23,10 @@
   }
 
   .btn-blue {
-    @apply bg-blue-700 bg-opacity-50;
+    @apply bg-blue-700;
   }
 
   .btn-blue:hover {
-    @apply bg-blue-900;
+    @apply bg-blue-800;
   }
 }
