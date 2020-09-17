@@ -1,0 +1,5 @@
+@layer components {
+  label {
+    @apply w-full block text-gray-500 cursor-pointer select-none;
+  }
+}

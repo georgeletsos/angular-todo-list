@@ -1,0 +1,13 @@
+<h2 class="text-white text-2xl font-medium text-center">Todos</h2>
+
+<ul class="mt-2 space-y-2">
+  <li *ngFor="let todo of todos">
+    <a
+      routerLink="/todo/{{ todo.id }}"
+      [class.line-through]="todo.completed"
+      class="w-full py-3 px-4 block bg-gray-300 text-black rounded-sm transition-all duration-300 transform hover:translate-x-1 hover:bg-gray-500 focus:outline-none focus:shadow-outline"
+    >
+      <span>{{ todo.title }}</span>
+    </a>
+  </li>
+</ul>

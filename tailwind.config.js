@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = (isProd) => ({
   prefix: '',
   future: {
@@ -8,5 +10,13 @@ module.exports = (isProd) => ({
     enabled: isProd,
     content: ['**/*.html', '**/*.ts'],
   },
-  theme: {},
+  theme: {
+    fontFamily: {
+      sans: ['Nunito', ...fontFamily.sans],
+    },
+  },
+  variants: {
+    borderColor: ({ after }) => after(['focus-within']),
+    textColor: ({ after }) => after(['focus-within']),
+  },
 });

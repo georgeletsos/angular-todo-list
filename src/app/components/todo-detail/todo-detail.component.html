@@ -1,0 +1,32 @@
+<div *ngIf="todo">
+  <div
+    class="py-1 px-2 bg-gray-900 border-b-2 border-gray-600 focus-within:border-blue-600"
+  >
+    <label class="focus-within:text-blue-600"
+      >Title<input
+        [(ngModel)]="todo.title"
+        class="w-full bg-transparent text-white text-xl focus:outline-none"
+        placeholder="Add a title"
+        type="text"
+      />
+    </label>
+  </div>
+
+  <div class="mt-2">
+    <label>
+      <input
+        [(ngModel)]="todo.completed"
+        class="cursor-pointer focus:outline-none focus:shadow-outline"
+        type="checkbox"
+      />
+      <span class="ml-2">Completed</span>
+    </label>
+  </div>
+
+  <button (click)="goBack()" class="btn btn-blue mt-2">
+    <span
+      [inlineSVG]="'/assets/arrow-thin-left.svg'"
+      [setSVGAttributes]="{ class: 'w-4 h-4 fill-current text-white' }"
+    ></span>
+  </button>
+</div>

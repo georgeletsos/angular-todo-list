@@ -1,0 +1,13 @@
+@layer components {
+  .nav-link {
+    @apply py-1 px-3 text-white text-lg uppercase;
+  }
+
+  .nav-link:hover {
+    @apply bg-gray-600 bg-opacity-50;
+  }
+
+  .nav-link:focus {
+    @apply outline-none shadow-outline;
+  }
+}

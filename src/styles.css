@@ -3,3 +3,30 @@
 @import "tailwindcss/utilities";
 
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito");
+
+@layer components {
+  .btn {
+    @apply py-3 px-4 rounded-lg text-white cursor-pointer transition-all duration-300 transform;
+  }
+
+  .btn-round {
+    @apply p-4;
+  }
+
+  .btn:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  .btn:focus {
+    @apply outline-none shadow-outline;
+  }
+
+  .btn-blue {
+    @apply bg-blue-700 bg-opacity-50;
+  }
+
+  .btn-blue:hover {
+    @apply bg-blue-900;
+  }
+}
