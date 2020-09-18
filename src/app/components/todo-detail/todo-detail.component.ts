@@ -29,12 +29,14 @@ export class TodoDetailComponent implements OnInit {
 
   getTodo(): void {
     const id = +this.route.snapshot.paramMap.get('id');
+    // TODO: handle the error
     this.todoService
       .getTodo(id)
       .subscribe(todo => this.todo = todo);
   }
 
   save(): void {
+    // TODO: handle the error
     this.todoService
       .updateTodo(this.todo)
       .subscribe(() => this.goBack());

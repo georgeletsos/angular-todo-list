@@ -18,8 +18,18 @@ export class TodosComponent implements OnInit {
   }
 
   getTodos(): void {
+    // TODO: handle the error
     this.todoService
       .getTodos()
       .subscribe(todos => this.todos = todos);
+  }
+
+  delete(event: Event, todo: Todo): void {
+    event.stopPropagation();
+
+    // TODO: handle the error
+    this.todoService
+      .deleteTodo(todo)
+      .subscribe(() => this.todos = this.todos.filter(t => t.id !== todo.id));
   }
 }

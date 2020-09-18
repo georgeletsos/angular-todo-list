@@ -10,8 +10,13 @@
     @apply py-2 px-4 rounded-lg text-white cursor-pointer transition-all duration-300 transform;
   }
 
+  .btn-icon {
+    min-height: 2.5rem;
+    @apply flex items-center;
+  }
+
   .btn-round {
-    @apply p-4;
+    @apply p-4 rounded-full;
   }
 
   .btn:hover {

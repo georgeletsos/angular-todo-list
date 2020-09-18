@@ -28,6 +28,7 @@ export class TodoCreateComponent implements OnInit {
       return;
     }
 
+    // TODO: handle the error
     this.todoService
       .createTodo({ title, completed } as Todo)
       .subscribe(() => this.goBack());
