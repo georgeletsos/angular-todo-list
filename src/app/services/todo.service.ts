@@ -12,6 +12,7 @@ import { TODOS } from '../mock-todos';
 })
 export class TodoService {
   private todosUrl = 'api/todos';
+  httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +31,16 @@ export class TodoService {
       .pipe(
         tap(_ => console.log(`SUCCESSFULLY FETCHED TODO WITH ID = ${id}`)),
         catchError(this.handleError<Todo>(`getTodo(id = ${id})`))
+      );
+  }
+
+  updateTodo(todo: Todo): Observable<any> {
+    const id = todo.id;
+    return this.http
+      .put(this.todosUrl + `/${id}`, todo, this.httpOptions)
+      .pipe(
+        tap(_ => console.log(`SUCCESSFULLY UPDATED TODO WITH ID = ${id}`)),
+        catchError(this.handleError<Todo>(`updateTodo(id = ${id})`))
       );
   }
 
