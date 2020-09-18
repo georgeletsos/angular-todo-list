@@ -24,9 +24,14 @@ export class TodosComponent implements OnInit {
       .subscribe(todos => this.todos = todos);
   }
 
-  delete(event: Event, todo: Todo): void {
-    event.stopPropagation();
+  update(todo: Todo): void {
+    // TODO: handle the error
+    this.todoService
+      .updateTodo(todo)
+      .subscribe();
+  }
 
+  delete(todo: Todo): void {
     // TODO: handle the error
     this.todoService
       .deleteTodo(todo)

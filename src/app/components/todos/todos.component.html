@@ -6,12 +6,23 @@
       routerLink="/todos/{{ todo.id }}"
       class="w-full py-3 px-4 bg-gray-300 rounded-sm flex justify-between items-center cursor-pointer transition-all duration-300 transform hover:translate-x-1 hover:bg-gray-500 focus:outline-none focus:shadow-outline"
     >
-      <span [class.line-through]="todo.completed" class="text-black truncate">{{
-        todo.title
-      }}</span>
+      <div class="pl-1 flex items-center overflow-hidden">
+        <input
+          [(ngModel)]="todo.completed"
+          (click)="$event.stopPropagation()"
+          (change)="update(todo)"
+          class="cursor-pointer focus:outline-none focus:shadow-outline"
+          type="checkbox"
+        />
+        <span
+          [class.line-through]="todo.completed"
+          class="ml-2 text-black truncate"
+          >{{ todo.title }}</span
+        >
+      </div>
 
       <button
-        (click)="delete($event, todo)"
+        (click)="$event.stopPropagation(); delete(todo)"
         class="btn btn-icon btn-round text-red-600 hover:bg-red-300"
       >
         <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
