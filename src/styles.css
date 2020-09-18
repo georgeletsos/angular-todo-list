@@ -29,4 +29,36 @@
   .btn-blue:hover {
     @apply bg-blue-800;
   }
+
+  .form-group {
+    @apply py-1 px-2 bg-gray-900 border-b-2 border-gray-600;
+  }
+
+  .form-group:focus-within {
+    @apply border-blue-600;
+  }
+
+  label {
+    @apply w-full block text-gray-500 cursor-pointer select-none;
+  }
+
+  label:focus-within {
+    @apply text-blue-600;
+  }
+
+  .form-control {
+    @apply w-full bg-transparent text-white text-xl;
+  }
+
+  .form-control:focus {
+    @apply outline-none;
+  }
+
+  .form-checkbox {
+    @apply cursor-pointer;
+  }
+
+  .form-checkbox:focus {
+    @apply outline-none shadow-outline;
+  }
 }

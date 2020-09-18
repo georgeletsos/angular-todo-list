@@ -34,6 +34,15 @@ export class TodoService {
       );
   }
 
+  createTodo(todo: Todo): Observable<Todo> {
+    return this.http
+      .post<Todo>(this.todosUrl, todo, this.httpOptions)
+      .pipe(
+        tap((newTodo: Todo) => console.log(`SUCCESSFULLY CREATED NEW TODO WITH ID = ${newTodo.id}`)),
+        catchError(this.handleError<Todo>(`createTodo`))
+      );
+  }
+
   updateTodo(todo: Todo): Observable<any> {
     const id = todo.id;
     return this.http

@@ -11,6 +11,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { AppComponent } from './app.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { TodoDetailComponent } from './components/todo-detail/todo-detail.component';
+import { TodoCreateComponent } from './components/todo-create/todo-create.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 
@@ -19,8 +20,9 @@ import { HeaderComponent } from './components/layout/header/header.component';
     AppComponent,
     TodosComponent,
     TodoDetailComponent,
+    TodoCreateComponent,
     DashboardComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
