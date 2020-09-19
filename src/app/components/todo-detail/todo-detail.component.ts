@@ -36,6 +36,11 @@ export class TodoDetailComponent implements OnInit {
   }
 
   save(): void {
+    const title = this.todo.title.trim();
+    if (!title) {
+      return;
+    }
+
     // TODO: handle the error
     this.todoService
       .updateTodo(this.todo)
