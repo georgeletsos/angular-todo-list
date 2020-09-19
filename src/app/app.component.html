@@ -5,6 +5,7 @@
     <router-outlet></router-outlet>
 
     <a
+      *ngIf="router.url !== '/todos/create'"
       routerLink="/todos/create"
       class="btn btn-icon btn-round btn-blue mb-1 mr-1 fixed bottom-0 right-0"
     >
