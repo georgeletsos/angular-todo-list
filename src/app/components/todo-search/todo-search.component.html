@@ -1,0 +1,23 @@
+<div class="mt-2">
+  <div class="form-group">
+    <input
+      #searchBox
+      (input)="search(searchBox.value)"
+      class="form-control"
+      placeholder="Search for todos..."
+    />
+  </div>
+
+  <div *ngIf="todos$ | async as todos" class="mt-2">
+    <p class="text-white text-right">Showing {{ todos.length }} results</p>
+
+    <ul class="mt-2 space-y-2">
+      <li *ngFor="let todo of todos">
+        <app-todo-list-item
+          [todo]="todo"
+          (deleteTodo)="search(searchBox.value)"
+        ></app-todo-list-item>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,11 +1,9 @@
 <div *ngIf="todo">
-  <div
-    class="py-1 px-2 bg-gray-900 border-b-2 border-gray-600 focus-within:border-blue-600"
-  >
-    <label class="focus-within:text-blue-600"
+  <div class="form-group">
+    <label
       >Title<input
         [(ngModel)]="todo.title"
-        class="w-full bg-transparent text-white text-xl focus:outline-none"
+        class="form-control"
         placeholder="Add a title"
         type="text"
       />
@@ -16,7 +14,7 @@
     <label>
       <input
         [(ngModel)]="todo.completed"
-        class="cursor-pointer focus:outline-none focus:shadow-outline"
+        class="form-checkbox"
         type="checkbox"
       />
       <span class="ml-2">Completed</span>

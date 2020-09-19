@@ -24,17 +24,7 @@ export class TodosComponent implements OnInit {
       .subscribe(todos => this.todos = todos);
   }
 
-  update(todo: Todo): void {
-    // TODO: handle the error
-    this.todoService
-      .updateTodo(todo)
-      .subscribe();
-  }
-
-  delete(todo: Todo): void {
-    // TODO: handle the error
-    this.todoService
-      .deleteTodo(todo)
-      .subscribe(() => this.todos = this.todos.filter(t => t.id !== todo.id));
+  onDeleteTodo(todo: Todo): void {
+    this.todos = this.todos.filter(t => t.id !== todo.id);
   }
 }

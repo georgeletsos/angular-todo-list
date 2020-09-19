@@ -10,8 +10,10 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 
 import { AppComponent } from './app.component';
 import { TodosComponent } from './components/todos/todos.component';
+import { TodoListItemComponent } from './components/todo-list-item/todo-list-item.component';
 import { TodoDetailComponent } from './components/todo-detail/todo-detail.component';
 import { TodoCreateComponent } from './components/todo-create/todo-create.component';
+import { TodoSearchComponent } from './components/todo-search/todo-search.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 
@@ -19,8 +21,10 @@ import { HeaderComponent } from './components/layout/header/header.component';
   declarations: [
     AppComponent,
     TodosComponent,
+    TodoListItemComponent,
     TodoDetailComponent,
     TodoCreateComponent,
+    TodoSearchComponent,
     DashboardComponent,
     HeaderComponent,
   ],

@@ -1,36 +1,10 @@
-<h2 class="text-white text-2xl font-medium text-center">Todos</h2>
+<h1 class="text-white text-2xl font-medium text-center">Todos</h1>
 
 <ul class="mt-2 space-y-2">
   <li *ngFor="let todo of todos">
-    <button
-      routerLink="/todos/{{ todo.id }}"
-      class="w-full py-3 px-4 bg-gray-300 rounded-sm flex justify-between items-center cursor-pointer transition-all duration-300 transform hover:translate-x-1 hover:bg-gray-500 focus:outline-none focus:shadow-outline"
-    >
-      <div class="pl-1 flex items-center overflow-hidden">
-        <input
-          [(ngModel)]="todo.completed"
-          (click)="$event.stopPropagation()"
-          (change)="update(todo)"
-          class="cursor-pointer focus:outline-none focus:shadow-outline"
-          type="checkbox"
-        />
-        <span
-          [class.line-through]="todo.completed"
-          class="ml-2 text-black truncate"
-          >{{ todo.title }}</span
-        >
-      </div>
-
-      <button
-        (click)="$event.stopPropagation(); delete(todo)"
-        class="btn btn-icon btn-round text-red-600 hover:bg-red-300"
-      >
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-          <path
-            d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"
-          />
-        </svg>
-      </button>
-    </button>
+    <app-todo-list-item
+      [todo]="todo"
+      (deleteTodo)="onDeleteTodo($event)"
+    ></app-todo-list-item>
   </li>
 </ul>

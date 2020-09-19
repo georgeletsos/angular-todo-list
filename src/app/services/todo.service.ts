@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 import { Todo } from '../models/todo.model';
-import { TODOS } from '../mock-todos';
 
 @Injectable({
   providedIn: 'root'
@@ -60,6 +59,23 @@ export class TodoService {
       .pipe(
         tap(_ => console.log(`SUCCESSFULLY DELETED TODO WITH ID = ${id}`)),
         catchError(this.handleError<Todo>(`deleteTodo(id = ${id})`))
+      );
+  }
+
+  searchTodos(term: string): Observable<Todo[]> {
+    term = term.trim();
+    if (!term) {
+      return of([]);
+    }
+
+    return this.http
+      .get<Todo[]>(this.todosUrl + `/?title=${term}`)
+      .pipe(
+        tap(x => x.length ?
+          console.log(`FOUND ${x.length} TODOS WITH TITLE CONTAINING ${term}`) :
+          console.log(`NO TODOS MATCHING WITH TITLE CONTAINING ${term}`)
+        ),
+        catchError(this.handleError<Todo[]>(`searchTodos(title CONTAINS ${term})`, []))
       );
   }
 
