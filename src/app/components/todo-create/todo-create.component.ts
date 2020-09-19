@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 
 import { Todo } from '../../models/todo.model';
@@ -12,11 +13,14 @@ import { TodoService } from '../../services/todo.service';
 export class TodoCreateComponent implements OnInit {
 
   constructor(
+    private titleService: Title,
     private todoService: TodoService,
     private location: Location
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.titleService.setTitle('Todo Create | AngularTodoList');
+  }
 
   goBack(): void {
     this.location.back();

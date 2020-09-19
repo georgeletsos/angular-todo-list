@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -14,12 +15,14 @@ export class TodoDetailComponent implements OnInit {
   todo: Todo;
 
   constructor(
+    private titleService: Title,
     private route: ActivatedRoute,
     private todoService: TodoService,
     private location: Location
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Todo Detail | AngularTodoList');
     this.getTodo();
   }
 

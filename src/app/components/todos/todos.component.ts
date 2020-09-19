@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { Todo } from '../../models/todo.model';
 import { TodoService } from '../../services/todo.service';
@@ -11,9 +12,13 @@ import { TodoService } from '../../services/todo.service';
 export class TodosComponent implements OnInit {
   todos: Todo[];
 
-  constructor(private todoService: TodoService) { }
+  constructor(
+    private titleService: Title,
+    private todoService: TodoService
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Todos List | AngularTodoList');
     this.getTodos();
   }
 
