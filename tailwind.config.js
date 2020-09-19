@@ -14,6 +14,11 @@ module.exports = (isProd) => ({
     fontFamily: {
       sans: ['Nunito', ...fontFamily.sans],
     },
+    extend: {
+      inset: {
+        '1/2': '50%',
+      },
+    },
   },
   variants: {
     borderColor: ({ after }) => after(['focus-within']),

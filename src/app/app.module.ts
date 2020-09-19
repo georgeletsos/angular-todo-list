@@ -16,6 +16,7 @@ import { TodoCreateComponent } from './components/todo-create/todo-create.compon
 import { TodoSearchComponent } from './components/todo-search/todo-search.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/layout/header/header.component';
+import { AlertsComponent } from './components/alerts/alerts.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HeaderComponent } from './components/layout/header/header.component';
     TodoSearchComponent,
     DashboardComponent,
     HeaderComponent,
+    AlertsComponent,
   ],
   imports: [
     BrowserModule,
