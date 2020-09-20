@@ -7,11 +7,12 @@ import { TodoDetailComponent } from '../app/components/todo-detail/todo-detail.c
 import { TodoCreateComponent } from '../app/components/todo-create/todo-create.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'todos', component: TodosComponent },
-  { path: 'todos/create', component: TodoCreateComponent },
+  { path: 'todos/create', component: TodoCreateComponent, pathMatch: 'full' },
   { path: 'todos/:id', component: TodoDetailComponent },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: '/dashboard' },
 ];
 
 @NgModule({
