@@ -1,11 +1,11 @@
-<div class="min-h-screen bg-gray-800">
+<div class="min-h-full bg-gray-800">
   <app-layout-header></app-layout-header>
 
   <main class="container pt-3 pb-32 px-4 mx-auto">
     <router-outlet></router-outlet>
 
     <div
-      class="mb-1 mr-1 fixed bottom-0 right-0 z-20 sm:container sm:py-3 sm:px-4 sm:m-0 sm:left-1/2 sm:transform sm:-translate-x-1/2"
+      class="mb-3 mr-4 fixed bottom-0 right-0 z-20 sm:container sm:py-3 sm:px-4 sm:m-0 sm:left-1/2 sm:transform sm:-translate-x-1/2"
     >
       <a
         *ngIf="router.url !== '/todos/create'"
