@@ -35,6 +35,16 @@
     @apply bg-blue-800;
   }
 
+  .btn-group {
+    @apply flex justify-between;
+  }
+
+  @screen sm {
+    .btn-group {
+      @apply justify-start;
+    }
+  }
+
   .form-group {
     @apply py-1 px-2 bg-gray-900 border-b-2 border-gray-600;
   }

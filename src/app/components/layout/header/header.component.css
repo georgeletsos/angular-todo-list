@@ -1,6 +1,6 @@
 @layer components {
   .nav-link {
-    @apply py-1 px-3 text-white text-lg uppercase;
+    @apply py-1 px-3 text-white text-lg uppercase tracking-wide;
   }
 
   .nav-link:hover {
